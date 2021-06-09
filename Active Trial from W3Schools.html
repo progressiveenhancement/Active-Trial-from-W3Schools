@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {background-color: #1F2841;}
+
+/* Style the buttons */
+.option {
+    width: 100%;
+    min-height: 75px;
+    background-color: white;
+    border-radius: 20px;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    margin-bottom: 20px;
+}
+
+
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+    background-color: #9493dc;
+    border-color: white;
+  	color: white;
+}
+
+.option:hover {
+    background-color: #9493dc;
+    border-color: white;
+  	color: white;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Active Button</h1>
+<p>Highlight the active/current (pressed) button.</p>
+  
+<div id="options-container">
+
+  <div class="option active">1</div>
+  <div class="option">2</div>
+  
+</div>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("options-container");
+var options = header.getElementsByClassName("option");
+for (var i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
